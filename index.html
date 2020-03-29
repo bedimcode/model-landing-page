@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Model Responsive landing page</title>
+    </head>
+    <body>
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">MODEL</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__close">
+                        <ion-icon name="close-outline" class="nav__close-icon" id="nav-close"></ion-icon>
+                    </div>
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Fashion</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Blog</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Sessions</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main bd-grid">
+            <div class="home">
+                <h1 class="home__title">I´M A <br> MODEL <br> SEXY</h1>
+
+                <div class="home__img">
+                    <!-- Parar ver el efecto de hover effect abra la pagina web en localhost -->
+                </div>
+
+                <div class="home__social">
+                    <a href="#" class="home__social-link">twitter</a>
+                    <a href="#" class="home__social-link">instagram</a>
+                    <a href="#" class="home__social-link">facebook</a>
+                </div>
+
+                <h2 class="home__subtitle">RUSIA<br>FASHION<br>MODEL</h2>
+
+                <a href="#" class="home__button">Contact <ion-icon name="arrow-forward-outline" class="home__button-icon"></ion-icon></a>
+
+            </div>
+        </main>
+
+        <!-- MAIN -->
+        <script src="assets/js/main.js"></script>
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+
+        <!-- THREE JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+         integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
+
+        <!-- HOVER-EFFECT JS -->
+        <script src="assets/js/hover-effect.umd.js"></script>
+        
+         <!-- ICONOS -->
+        <script  type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    
+        <script>
+            new hoverEffect({
+                parent: document.querySelector('.home__img'),
+                intensity: 0.3,
+                image1: 'assets/img/img1.jpg',
+                image2: 'assets/img/img2.jpg',
+                displacementImage: 'assets/img/diss.png',
+                imagesRatio: 450 / 300
+            })
+
+            /* NAV, TITLE Y IMG y*/
+            gsap.from('.nav', {opacity: 0, duration: 1, delay:1, y: -30})
+            gsap.from('.home__title', {opacity: 0, duration: 1.2, delay:1.2, y: -30})
+            gsap.from('.home__img', {opacity: 0, duration: 1.3, delay:1.3, y: -50})
+
+            /*SOCIAL, SUBTITLE Y BUTTON*/
+            gsap.from('.home__social', {opacity: 0, duration: 1, delay:1.5, y: 50})
+            gsap.from('.home__subtitle', {opacity: 0, duration: 1, delay: 1.8, y: 50})
+            gsap.from('.home__button', {opacity: 0, duration: 1, delay:2, y: 50})
+        </script>
+    </body>
+</html>
